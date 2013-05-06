@@ -1,0 +1,145 @@
+/*
+Theme Name:     Template
+Description:    Template for huskypress child theme development.
+Author:         Abe Millett
+Template:       huskypress2.1.0
+Version:        0.1.0
+*/
+
+
+/** Template goals:
+ *
+ *  adaptive: media queries in style
+ *
+ ***********************************************/
+
+
+/* include parent style */
+@import url('../huskypress2.1.0/style.css');
+
+
+/** huskypress markup:
+ *  
+ *  <div id="uc-head-wrap">
+ *      <div id="uc-head" class="container">
+ *          <h1>(contains logo and site title)</h1>
+ *          <div id="uc-search"></div>
+ *      </div>
+ *  </div>
+ *  
+ *  <div class="wrap nav">
+ *      <div class="content nav">(contains div.sf-menu)</div>
+ *  </div>
+ *  
+ *  <div class="wrap body">
+ *      <div class="content body">
+ *  </div>
+ *  
+ *  <div id="uc-foot-wrap" class="wrap foot">
+ *      <div class="content foot">  // custom foot content
+ *      <div id="uc-foot">          // uc-theme foot content
+ *  </div>
+ *
+ ***********************************************/
+
+
+ /*================>
+  Screen Size: ALL
+<================*/
+
+/* layout ===>
+*/
+.wrap {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2%;
+    overflow: hidden; /* clear floats */
+}
+    .content.body {
+        padding: 2em 2%;
+    }
+
+/* hack */
+#nav { overflow: visible; } /* override .content{overflow:hidden;} to avoid breaking superfish dropdowns */
+/* END hack */
+
+.body {}
+    .body table {
+        width: 100%;
+    }
+    .body .banner {
+        width: 100%;
+    }
+
+.entry {
+    width: 70%;
+    float: left;
+}
+
+aside.body {
+    width: 25%;
+    float: right;
+}
+aside.foot {
+    width: 100%;
+}
+
+/*
+<=== END layout */
+
+/* theme ===>
+*/
+    /* typography ===>
+    */
+    .content {
+        font-size: 1em !important; /* what's up with this? */
+    }
+    
+    .content p {
+        margin: 0 0 1em;
+        font-size: 1.1em;
+        line-height: 1.4em;
+    }
+
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4 { margin: 0 0 1em; }
+
+    .content h1 { font-size: 2.4em; }
+    .content h2 { font-size: 2em; }
+    .content h3 { font-size: 1.8em; }
+    .content h4 { font-size: 1.2em; }
+    /*
+    <=== END typography */
+
+.wrap {
+    background: #0ad; /* delete for production */
+}
+    .wrap.nav {
+        background: #0da; /* delete for production */
+    }
+    .wrap.body {}
+
+.content {
+    background: #fff; /* default background for .content */
+}
+    .content.nav {
+        background: #da0; /* delete for production */
+    }
+    .content.body {}
+    .content.foot {
+        background: #a0d;       /* delete for production */
+        /*background: none;*/   /* uncomment for production */
+    }
+aside.body {
+    background: #ad0; /* delete for production */
+}
+/*
+<=== END theme */
